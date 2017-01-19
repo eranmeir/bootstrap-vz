@@ -13,4 +13,4 @@ class AdjustExpandRootDev(Task):
     def run(cls, info):
         from bootstrapvz.common.tools import sed_i
         script = os.path.join(info.root, 'etc/init.d/expand-root')
-        sed_i(script, '/dev/loop0', '/dev/sda')
+        sed_i(script, info.volume.device_path, '/dev/sda')
